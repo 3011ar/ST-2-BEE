@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Full-width input fields */
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+
+    hr {
+      border: 1px solid #f1f1f1;
+      margin-bottom: 25px;
+    }
+
+    /* Set a style for all buttons */
+    button {
+      background-color: #04aa6d;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+    }
+
+    button:hover {
+      opacity: 1;
+    }
+
+    /* Extra styles for the cancel button */
+
+    /* Add padding to container elements */
+    .container {
+      width: 45%;
+      height: 98%;
+      padding: 16px;
+      transform: translate(-50%,-50%);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border: 5px double black;
+      background-color: skyblue;
+    }
+
+    /* Clear floats */
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    /* Change styles for cancel button and signup button on extra small screens */
+    @media screen and (max-width: 300px) {
+      .cancelbtn,
+      .signupbtn {
+        width: 100%;
+      }
+    }
+  </style>
+  <body>
+    <form action="/signup" method="post" style="border: 1px solid #ccc">
+      <div class="container">
+        <h1>Sign Up Form</h1>
+        
+        <hr />
+
+        <label for="user"><b><i>Enter Username</i></b></label>
+        <input
+          type="text"
+          id="user"
+          placeholder="Enter Username"
+          name="username"
+          required
+        />
+
+        <% if(err){ %>
+        <p style="color: red">Username Already exist</p>
+        <% }%>
+        <label for="fname"><b><i>Enter First name</i></b></label>
+        <input
+          type="text"
+          placeholder="Enter First name"
+          name="fname"
+          required
+        />
+
+        <label for="gender"><b><i>Choose Gender</i></b></label>
+        <br />
+        <select
+          style="width: 100%; padding: 10px 20px; margin: 10px 0px"
+          name="gender"
+          id="gender"
+          required
+        >
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <br />
+        <label for="phone"><b><i>Enter Contact</i></b></label>
+        <input
+          type="text"
+          placeholder="Enter Phone No."
+          name="phone"
+          required
+        />
+
+        <label for="psw"><b> <i> Create Password </i></b></label>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          name="psw"
+          required
+        />
+
+        <div class="clearfix">
+          <button type="submit" class="signupbtn" style="background-color: #00c538; color: black; font-size: 20px;">Sign Up</button>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
